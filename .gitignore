@@ -112,4 +112,5 @@ config.py
 app.db
 
 # pycache
-__pycache__
+app/__pycache__
+__pycache
