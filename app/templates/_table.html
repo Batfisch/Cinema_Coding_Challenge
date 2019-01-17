@@ -1,0 +1,17 @@
+<table style="width:100%">
+    <th rowspan="5">Filmname</th>
+    <tr>
+      <td>Mo</td>
+      <td>Di</td>
+      <td>Mi</td>
+      <td>Do</td>
+      <td>Fr</td>
+      <td>Sa</td>
+      <td>So</td>
+    </tr>
+  <tr>
+      {%for time in time%}
+        <td>{{time}} </td>
+      {%endfor%}
+  </tr>
+</table>

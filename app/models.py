@@ -14,6 +14,8 @@ class Screenings(db.Model):
     day = db.Column(db.String(20), unique=True)
     price = db.Column(db.Integer)
 
+    # relations of the DB
+
     def __repr__(self):
         return '<Screenings {}>'.format(self.body)
 
@@ -48,6 +50,8 @@ class Seats(db.Model):
     row = db.Column(db.Integer)
     seat_number = db.Column(db.Integer)
 
+    # relations of the DB
+
     def __repr__(self):
         return '<Seats {}>'.format(self.body)
 
@@ -62,6 +66,8 @@ class SeatReservation(db.Model):
     screenings_id = db.Column(db.Integer, db.ForeignKey("Screenings.id"))
     # Data in Table
     paid = db.Column(db.Boolean, default=False)
+
+    # relations of the DB
 
     def __repr__(self):
         return '<Seat_reservation {}>'.format(self.body)
@@ -78,6 +84,8 @@ class Costumer(db.Model):
     card_code = db.Column(db.Integer)
     total_price = db.Column(db.Integer)
     number_of_seats = db.Column(db.Integer)
+
+    # relations of the DB
 
     def __repr__(self):
         return '<Costumer {}>'.format(self.body)
