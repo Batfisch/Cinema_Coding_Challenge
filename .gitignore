@@ -110,3 +110,6 @@ config.py
 
 # db should not be seen
 app.db
+
+# pycache
+__pycache__
