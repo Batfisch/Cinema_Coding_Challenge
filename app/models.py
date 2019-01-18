@@ -17,7 +17,7 @@ class Screenings(db.Model):
     # relations of the DB
 
     def __repr__(self):
-        return '<Screenings {}>'.format(self.body)
+        return '<Screenings.txt {}>'.format(self.body)
 
 
 # movies
@@ -63,7 +63,7 @@ class SeatReservation(db.Model):
     seats_id = db.Column(db.Integer, db.ForeignKey("Seats.id"))
     rooms_id = db.Column(db.Integer, db.ForeignKey("Room.id"))
     customer_id = db.Column(db.Integer, db.ForeignKey("Costumer.id"))
-    screenings_id = db.Column(db.Integer, db.ForeignKey("Screenings.id"))
+    screenings_id = db.Column(db.Integer, db.ForeignKey("Screenings.txt.id"))
     # Data in Table
     paid = db.Column(db.Boolean, default=False)
 
@@ -77,7 +77,7 @@ class SeatReservation(db.Model):
 class Costumer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     # Foreign Key
-    screenings_id = db.Column(db.Integer, db.ForeignKey("Screenings.id"))
+    screenings_id = db.Column(db.Integer, db.ForeignKey("Screenings.txt.id"))
     # Data in Table
     name = db.Column(db.String(50))
     card_number = db.Column(db.Integer)
