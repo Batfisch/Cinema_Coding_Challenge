@@ -34,12 +34,11 @@ def upgrade():
     sa.Column('movies_id', sa.Integer(), nullable=True),
     sa.Column('room_id', sa.Integer(), nullable=True),
     sa.Column('time', sa.String(length=5), nullable=True),
-    sa.Column('day', sa.String(length=20), nullable=True),
+    sa.Column('day', sa.String(length=2), nullable=True),
     sa.Column('price', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['movies_id'], ['movies.id'], ),
     sa.ForeignKeyConstraint(['room_id'], ['rooms.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('day')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('seats',
     sa.Column('id', sa.Integer(), nullable=False),

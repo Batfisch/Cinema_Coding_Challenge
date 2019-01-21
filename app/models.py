@@ -11,13 +11,13 @@ class Screenings(db.Model):
     room_id = db.Column(db.Integer, db.ForeignKey("rooms.id"))
     # Data in Table
     time = db.Column(db.String(5))
-    day = db.Column(db.String(20), unique=True)
+    day = db.Column(db.String(2))
     price = db.Column(db.Integer)
 
     # relations of the DB
 
     def __repr__(self):
-        return '<Screenings {}>'.format(self.body)
+        return '<Screenings on {}, at {} which costs: {} >'.format(self.day, self.time,  self.price)
 
 
 # movies
@@ -38,7 +38,7 @@ class Rooms(db.Model):
     name = db.Column(db.String(10))
 
     def __repr__(self):
-        return '<Rooms {}>'.format(self.body)
+        return '<Rooms {}>'.format(self.name)
 
 
 # seats
